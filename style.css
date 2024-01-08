@@ -36,7 +36,7 @@ h4 {
 #backdropDripper, #backdrop {
     display: none;
 }
-.content_title_expanded, .content_subtitle, .content_title_unexpanded, .commentsTextFieldWrap, #standaloneCommentBox, #votesBalance{
+.content_title_expanded, .content_subtitle, .content_title_unexpanded, .commentsTextFieldWrap, #standaloneCommentBox, #votesBalance, .expand_button{
     background-color: transparent;
 }
 .page_yellowheader, .page_header, .container_gray .content{
@@ -213,17 +213,17 @@ body.dimmed > .dimmer{
 .navigation .edit-button, .searchHide{
     display: none
 }
-.navigation .link, .page_footer .link, .post-share-button, .post-like-button, .paginator a, #wallAttachmentMenu>a, .audioEntry, .tab, #profile_link:hover, .profile_link, #activetabs, input{
+.navigation .link, .page_footer .link, .post-share-button, .post-like-button, .paginator a, #wallAttachmentMenu>a, .audioEntry, .tab, #profile_link:hover, .profile_link, #activetabs, input, select, .searchList a{
     transition: .2s
 }
-.navigation .link:hover, .page_footer .link:hover, .post-share-button:hover, .post-like-button:hover, .paginator a:hover, #wallAttachmentMenu>a:hover, .audioEntry.nowPlaying, a[href^="javascript:expand_comment_textarea"]:hover {
+.navigation .link:hover, .page_footer .link:hover, .post-share-button:hover, .post-like-button:hover, .paginator a:hover, #wallAttachmentMenu>a:hover, .audioEntry.nowPlaying, a[href^="javascript:expand_comment_textarea"]:hover, .expand_button:hover {
     background-color: #383838;
 }
 .navigation .link:active, .page_footer .link:active, .post-share-button:active, .post-like-button:active, .paginator a:active, #wallAttachmentMenu>a:active, .audioEntry.nowPlaying:hover {
     background-color: #2E2E2E !important;
 }
 .audioEntry:hover, .tab:hover, #profile_link:hover, .profile_link:hover, #activetabs:hover, .searchList a:hover, .searchList #used:hover{
-    background: #383838;
+    background: #383838 !important;
 }
 .searchList li, .searchList a, .searchList a:hover, .audioEntry .performer a {
     color: #D6D6D6 !important;
@@ -539,4 +539,89 @@ a[href^="javascript:expand_comment_textarea"]{clear: both;
 }
 .ovk-diag select{
     background-color: #363636 !important;
+}
+
+.cookies-popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #222;
+    box-shadow: none;
+    z-index: 2048;
+}
+input[type="submit"]:hover {
+    color: rgba(0, 0, 0, 70%);
+}
+.audioEntry .playerButton .playIcon {
+    background-image: none;
+    content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM10.8556 8.15498C10.0225 7.69354 9 8.29608 9 9.24847V14.7516C9 15.704 10.0225 16.3065 10.8556 15.8451L16.6134 12.6561C16.852 12.524 17 12.2727 17 12C17 11.7273 16.852 11.4761 16.6134 11.3439L10.8556 8.15498Z' fill='%23fff'/%3E%3C/svg%3E%0A");
+    height: 20px;
+    width: 20px
+}
+.audioEntry.nowPlaying .playIcon {
+    content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM10.5 8.25V15.75C10.5 16.1642 10.1642 16.5 9.75 16.5C9.33579 16.5 9 16.1642 9 15.75V8.25C9 7.83579 9.33579 7.5 9.75 7.5C10.1642 7.5 10.5 7.83579 10.5 8.25ZM15 8.25V15.75C15 16.1642 14.6642 16.5 14.25 16.5C13.8358 16.5 13.5 16.1642 13.5 15.75V8.25C13.5 7.83579 13.8358 7.5 14.25 7.5C14.6642 7.5 15 7.83579 15 8.25Z' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+.bigPlayer .paddingLayer .playButtons .arrowsButtons {
+    padding-top: 3.5px;
+}
+.bigPlayer {
+        width: 632px;
+    box-shadow: none;
+}
+.bigPlayer.floating{
+    background-color: #2E2E2E !important;
+}
+.paginator a {
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+hr {
+    background-color: #333;
+}
+.bigPlayer .paddingLayer .additionalButtons .repeatButton{
+    content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.75 5.5167C13.0059 5.5167 13.2318 5.64482 13.3672 5.84041L13.4076 5.90575C13.7833 6.51555 14 7.23332 14 8.0017C14 10.1439 12.316 11.8928 10.1996 11.9968L10 12.0017L7.555 12.001L8.27742 12.7231C8.54369 12.9893 8.56789 13.406 8.35004 13.6996L8.27742 13.7837C8.01115 14.05 7.59449 14.0742 7.30088 13.8563L7.21676 13.7837L5.21506 11.782C4.94879 11.5158 4.92459 11.0991 5.14244 10.8055L5.21506 10.7214L7.21676 8.71967C7.50965 8.42678 7.98453 8.42678 8.27742 8.71967C8.54369 8.98594 8.56789 9.4026 8.35004 9.69621L8.27742 9.78033L7.556 10.501L10 10.5017C11.3255 10.5017 12.41 9.47016 12.4947 8.16608L12.5 8.0017C12.5 7.50715 12.3564 7.04615 12.1086 6.6581C12.0404 6.54462 12 6.41038 12 6.2667C12 5.85249 12.3358 5.5167 12.75 5.5167ZM7.71967 2.21967C7.98594 1.9534 8.4026 1.9292 8.69621 2.14705L8.78033 2.21967L10.782 4.22137L10.8546 4.30549C11.0483 4.56648 11.0507 4.92469 10.8618 5.18808L10.782 5.28203L8.78033 7.28373L8.69621 7.35635C8.43522 7.55 8.07701 7.55239 7.81362 7.36352L7.71967 7.28373L7.64705 7.19961C7.4534 6.93862 7.45101 6.58041 7.63988 6.31702L7.71967 6.22307L8.441 5.501L6 5.5017C4.67452 5.5017 3.58996 6.53324 3.50532 7.83732L3.5 8.0017C3.5 8.42312 3.60427 8.82019 3.78842 9.16851L3.8976 9.35317C3.96269 9.46428 4 9.59363 4 9.73171C4 10.1459 3.66421 10.4817 3.25 10.4817C2.98206 10.4817 2.74693 10.3412 2.61428 10.1298C2.22529 9.51615 2 8.78524 2 8.0017C2 5.8595 3.68397 4.11062 5.80036 4.0066L6 4.0017L8.44 4.001L7.71967 3.28033L7.64705 3.19621C7.4292 2.9026 7.4534 2.48594 7.71967 2.21967Z' fill='%23fff'/%3E%3C/svg%3E%0A")
+}
+.bigPlayer .paddingLayer .additionalButtons .shuffleButton{
+    content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.2803 3.46967C11.9874 3.17678 11.5126 3.17678 11.2197 3.46967C10.9268 3.76256 10.9268 4.23744 11.2197 4.53033L11.4846 4.79523C9.38956 5.04908 8.11453 6.32448 7.01325 7.42608L6.96967 7.46967C5.70856 8.73078 4.65822 9.75 2.75 9.75C2.33579 9.75 2 10.0858 2 10.5C2 10.9142 2.33579 11.25 2.75 11.25C5.31145 11.25 6.75736 9.80367 7.98675 8.57392L8.03033 8.53033C9.07986 7.4808 9.98341 6.59881 11.3569 6.3324L11.2197 6.46967C10.9268 6.76256 10.9268 7.23744 11.2197 7.53033C11.5126 7.82322 11.9874 7.82322 12.2803 7.53033L13.7803 6.03033C14.0732 5.73744 14.0732 5.26256 13.7803 4.96967L12.2803 3.46967ZM2.75 4.75C4.51885 4.75 5.75571 5.43972 6.75666 6.27155C6.61355 6.41115 6.47704 6.54784 6.34616 6.67889L6.26256 6.76256C6.05796 6.96716 5.86601 7.15725 5.68192 7.33222C4.87169 6.68232 3.99278 6.25 2.75 6.25C2.33579 6.25 2 5.91421 2 5.5C2 5.08579 2.33579 4.75 2.75 4.75ZM11.4846 11.2048C10.1132 11.0386 9.09325 10.4348 8.24334 9.72845C8.38646 9.58884 8.52298 9.45214 8.65386 9.32108L8.73744 9.23744C8.94204 9.03284 9.13399 8.84275 9.31808 8.66778C9.91959 9.15026 10.5589 9.51282 11.3569 9.6676L11.2197 9.53033C10.9268 9.23744 10.9268 8.76256 11.2197 8.46967C11.5126 8.17678 11.9874 8.17678 12.2803 8.46967L13.7803 9.96967C14.0732 10.2626 14.0732 10.7374 13.7803 11.0303L12.2803 12.5303C11.9874 12.8232 11.5126 12.8232 11.2197 12.5303C10.9268 12.2374 10.9268 11.7626 11.2197 11.4697L11.4846 11.2048Z' fill='%23fff'/%3E%3C/svg%3E%0A")
+}
+.bigPlayer .paddingLayer .additionalButtons .deviceButton{
+    content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.99998 2.50001C8.99998 2.29898 8.87957 2.11749 8.69435 2.03934C8.50912 1.96119 8.2951 2.00157 8.15109 2.14185L5.22438 4.99273H3.5C2.67157 4.99273 2 5.66431 2 6.49273V9.48172C2 10.3101 2.67157 10.9817 3.5 10.9817H5.22314L8.14957 13.8567C8.29326 13.9978 8.50762 14.039 8.69337 13.9611C8.87911 13.8832 8.99998 13.7014 8.99998 13.5V2.50001ZM10.1469 6.14646C10.3422 5.9512 10.6588 5.9512 10.854 6.14646L12.0005 7.29291L13.1469 6.14646C13.3422 5.9512 13.6588 5.9512 13.854 6.14646C14.0493 6.34172 14.0493 6.65831 13.854 6.85357L12.7076 8.00001L13.854 9.14646C14.0493 9.34172 14.0493 9.65831 13.854 9.85357C13.6588 10.0488 13.3422 10.0488 13.1469 9.85357L12.0005 8.70712L10.854 9.85357C10.6588 10.0488 10.3422 10.0488 10.1469 9.85357C9.95167 9.65831 9.95167 9.34172 10.1469 9.14646L11.2934 8.00001L10.1469 6.85357C9.95167 6.65831 9.95167 6.34172 10.1469 6.14646Z' fill='%23fff'/%3E%3C/svg%3E%0A")
+}
+.audioEntry .buttons .edit-icon {
+    content: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.73605 1.56067C8.4836 0.813113 9.69562 0.81311 10.4432 1.56066C11.1907 2.3082 11.1907 3.52021 10.4432 4.26776L10.209 4.50192L7.50192 1.79481L7.73605 1.56067ZM6.79482 2.50192L1.65036 7.64647C1.58074 7.71609 1.53323 7.80471 1.51377 7.90123L1.00987 10.4012C0.976812 10.5652 1.02796 10.7349 1.14614 10.8533C1.26432 10.9716 1.43387 11.0231 1.59792 10.9903L4.10183 10.4903C4.19868 10.471 4.28763 10.4234 4.35747 10.3536L9.50192 5.20903L6.79482 2.50192Z' fill='%23fff'/%3E%3C/svg%3E%0A")
+}
+.audioEntry .buttons .remove-icon {
+    content: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 3H7C7 2.44772 6.55228 2 6 2C5.44772 2 5 2.44772 5 3ZM4 3C4 1.89543 4.89543 1 6 1C7.10457 1 8 1.89543 8 3L10.5 3C10.7761 3 11 3.22386 11 3.5C11 3.77614 10.7761 4 10.5 4H10.059L9.61576 9.1708C9.52709 10.2054 8.66143 11 7.62307 11H4.37693C3.33857 11 2.47291 10.2054 2.38424 9.1708L1.94102 4H1.5C1.22386 4 1 3.77614 1 3.5C1 3.22386 1.22386 3 1.5 3L4 3ZM7.5 6C7.5 5.72386 7.27614 5.5 7 5.5C6.72386 5.5 6.5 5.72386 6.5 6V8C6.5 8.27614 6.72386 8.5 7 8.5C7.27614 8.5 7.5 8.27614 7.5 8V6ZM5 5.5C4.72386 5.5 4.5 5.72386 4.5 6V8C4.5 8.27614 4.72386 8.5 5 8.5C5.27614 8.5 5.5 8.27614 5.5 8V6C5.5 5.72386 5.27614 5.5 5 5.5Z' fill='%23fff'/%3E%3C/svg%3E%0A")
+}
+.audioEntry .buttons .add-icon-group {
+    content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 4.5C8 5.88071 6.88071 7 5.5 7C4.11929 7 3 5.88071 3 4.5C3 3.11929 4.11929 2 5.5 2C6.88071 2 8 3.11929 8 4.5ZM11.5 6C10.9517 6 10.4222 6.08022 9.9225 6.22957C9.65775 5.89039 9.5 5.46362 9.5 5C9.5 3.89543 10.3954 3 11.5 3C12.6046 3 13.5 3.89543 13.5 5C13.5 5.46362 13.3423 5.89039 13.0775 6.22957C12.5778 6.08022 12.0483 6 11.5 6ZM3 8H7.25716C6.47182 8.95094 6 10.1704 6 11.5C6 11.8336 6.02971 12.1603 6.08661 12.4775C5.90131 12.4922 5.70596 12.5 5.5 12.5C1.5 12.5 1.5 9.575 1.5 9.575V9.5C1.5 8.67157 2.17157 8 3 8ZM16 11.5C16 13.9853 13.9853 16 11.5 16C9.01472 16 7 13.9853 7 11.5C7 9.01472 9.01472 7 11.5 7C13.9853 7 16 9.01472 16 11.5ZM12 9.5C12 9.22386 11.7761 9 11.5 9C11.2239 9 11 9.22386 11 9.5V11H9.5C9.22386 11 9 11.2239 9 11.5C9 11.7761 9.22386 12 9.5 12H11V13.5C11 13.7761 11.2239 14 11.5 14C11.7761 14 12 13.7761 12 13.5V12H13.5C13.7761 12 14 11.7761 14 11.5C14 11.2239 13.7761 11 13.5 11H12V9.5Z' fill='%23fff'/%3E%3C/svg%3E%0A")
+}
+.audioEntry .buttons > *{
+    width: 16px !important;
+    height: 16px !important;
+}
+.bigPlayer .paddingLayer .additionalButtons > *{
+    width: 15px !important;
+    height: 16px !important;
+}
+.content_subtitle div[style="float:right;"]{
+    color: #333 !important;
+}
+.content_subtitle div[style="float:right;"] a:last-child {
+    content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.73966 3.20041C5.43613 3.48226 5.41856 3.95681 5.70041 4.26034L9.22652 8L5.70041 11.7397C5.41856 12.0432 5.43613 12.5177 5.73967 12.7996C6.0432 13.0815 6.51775 13.0639 6.7996 12.7603L10.7996 8.51034C11.0668 8.22258 11.0668 7.77743 10.7996 7.48966L6.7996 3.23966C6.51775 2.93613 6.0432 2.91856 5.73966 3.20041Z' fill='%23479ef5'/%3E%3C/svg%3E%0A");
+    position: absolute;
+}
+.post-author .edit {
+    background-image: none;
+    content: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.73605 1.56067C8.4836 0.813113 9.69562 0.81311 10.4432 1.56066C11.1907 2.3082 11.1907 3.52021 10.4432 4.26776L10.209 4.50192L7.50192 1.79481L7.73605 1.56067ZM6.79482 2.50192L1.65036 7.64647C1.58074 7.71609 1.53323 7.80471 1.51377 7.90123L1.00987 10.4012C0.976812 10.5652 1.02796 10.7349 1.14614 10.8533C1.26432 10.9716 1.43387 11.0231 1.59792 10.9903L4.10183 10.4903C4.19868 10.471 4.28763 10.4234 4.35747 10.3536L9.50192 5.20903L6.79482 2.50192Z' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+.post-author .pin {
+    background-image: none;
+    content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.0589 2.44535C9.34701 1.73087 8.14697 1.90854 7.67261 2.79864L5.6526 6.58902L2.8419 7.52592C2.6775 7.58072 2.5532 7.71673 2.51339 7.88539C2.47357 8.05404 2.52392 8.23128 2.64646 8.35382L4.79287 10.5002L2.14637 13.1467L2 14.0003L2.85348 13.8538L5.49998 11.2073L7.64646 13.3538C7.76899 13.4764 7.94623 13.5267 8.11489 13.4869C8.28354 13.4471 8.41955 13.3228 8.47435 13.1584L9.41143 10.3472L13.1897 8.32448C14.0759 7.85006 14.2538 6.65535 13.5443 5.9433L10.0589 2.44535Z' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+.post-author .delete {
+    background-image: none;
+    content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.39705 2.55379L2.46967 2.46967C2.73594 2.2034 3.1526 2.1792 3.44621 2.39705L3.53033 2.46967L8 6.939L12.4697 2.46967C12.7626 2.17678 13.2374 2.17678 13.5303 2.46967C13.8232 2.76256 13.8232 3.23744 13.5303 3.53033L9.061 8L13.5303 12.4697C13.7966 12.7359 13.8208 13.1526 13.6029 13.4462L13.5303 13.5303C13.2641 13.7966 12.8474 13.8208 12.5538 13.6029L12.4697 13.5303L8 9.061L3.53033 13.5303C3.23744 13.8232 2.76256 13.8232 2.46967 13.5303C2.17678 13.2374 2.17678 12.7626 2.46967 12.4697L6.939 8L2.46967 3.53033C2.2034 3.26406 2.1792 2.8474 2.39705 2.55379L2.46967 2.46967L2.39705 2.55379Z' fill='%23fff'/%3E%3C/svg%3E%0A");
 }
